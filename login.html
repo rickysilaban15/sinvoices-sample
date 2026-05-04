@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Sinvoice</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="auth-page">
+
+  <div class="auth-left">
+    <div class="auth-left__content">
+      <h2>Selamat Datang Kembali</h2>
+      <p>Login untuk mengakses dashboard dan kelola invoice Anda.</p>
+    </div>
+  </div>
+
+  <div class="auth-right">
+    <div class="auth-form-box">
+      <h1>Login</h1>
+      <p class="auth-form-box__sub">
+        Belum punya akun? <a href="register.html">Daftar</a>
+      </p>
+
+      <form onsubmit="event.preventDefault(); login();">
+  <div class="form-group">
+    <label>Email</label>
+    <input type="email" id="email" placeholder="email@email.com">
+  </div>
+
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" id="password" placeholder="********">
+  </div>
+
+  <button type="submit" class="btn-form">Login</button>
+</form>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+<script>
+function login() {
+  let email = document.getElementById('email').value;
+  let pass = document.getElementById('password').value;
+
+  if (email === "admin@mail.com" && pass === "123456") {
+    localStorage.setItem("login", "true");
+    window.location.href = "dashboard.html";
+  } else {
+    alert("Login salah");
+  }
+}
+</script>
+</html>
